@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/coração.png">
+    <title>Eu te amo Giovanna Rossi</title>
+</head>
+<body>
+    <div id="jogo" class="jogo">
+    <div class="tela">
+    <div id="gameBoard">
+    <!-- <div id="sdadnajw" class="card">
+        <div class="card_front" data-icon="bootstrap">
+                <img class="icon" src="image/bootstrap.png" alt="bootstrap">
+        </div>
+        <div class="card_back">
+            &lt/&gt
+        </div> -->
+    </div>
+   
+    <!-- ----------------------------------- -->
+
+
+   <div id="gameOver">
+        <div>
+            Parabéns, você completou o jogo!
+        </div>
+        <div class="container-btn">
+        <button id="restart" onclick="restart()">Jogue Novamente</button>
+        <button id="btn-quiz" onclick="quiz()" >Fazer o Quiz</button>
+        </div>
+    </div> 
+
+</div>
+    <div id="audio">
+        <audio id="matchcard" src="audio/audio-matchcard.wav"></audio>
+        <audio id="cardFlip" src="audio/card-flip.mp3"></audio>
+        <audio id="wingame" src="audio/wingame.wav"></audio>
+        <audio id="musicGame" src="audio/musica-game.mp3"></audio>
+
+    </div>
+
+
+    <div id="div-move" class="move">
+        <p>Move:0</p>
+    </div>
+    </div>
+    <div id="container-start" class="container-start">
+    <button  class="btnStart" id="btnStart">Começar Jogo</button>
+    </div>
+
+
+
+    <div id="container-quiz" class="container-quiz">
+        <div class="titulo">Quiz</div>
+        <div class="perguntas">
+        <p class="pergunta"> 1- Quando nos conhecemos voce me disse que não gostava de homem _______ e brincamos de ______ e ______.</p>  
+        <p>Responda em sequência</p>
+        <div class="resposta">
+        <p>A - </p><input id="inputpg1rp1" type="radio"> <p id="erradopg1rp1">Magro, Mimica e Verdade ou Desafio.</p>
+        </div>
+        <div class="resposta">
+        <p>B - </p><input id="inputpg1rp2" type="radio"> <p id="erradopg1rp2">Alto, Esconde Esconde e Cidade Dorme.</p>
+        </div>
+        <div class="resposta">
+        <p>C - </p><input onclick="correta()" type="radio"> <p id="correto" >Careca, Mimica e Cidade Dorme.</p>
+        </div>
+        <div class="resposta">
+        <p>D - </p><input id="inputpg1rp4" type="radio"> <p id="erradopg1rp4">Gordo, Mimica e Truco.</p>
+        </div>
+        <div class="resposta">
+        <p>E - </p><input id="inputpg1rp5"  type="radio"> <p id="erradopg1rp5">Forte, Uno e Cidade Dorme.</p>
+        </div>
+        </div>
+
+
+
+        <div class="perguntas">
+        <p class="pergunta">2- Quais são as três datas mais importantes para nós ?
+        </p>
+        <div class="resposta">
+        <p>A - </p><input id="inputpg2rp1" type="radio"> <p id="erradopg2rp1">05/01, 24/01 e 10/01</p>
+        </div>
+        <div class="resposta">
+        <p>B - </p><input onclick="correta2()"  type="radio"> <p id="correto2">01/01, 05/01 e 10/01</p>
+        </div>
+        <div class="resposta">
+        <p>C - </p><input  id="inputpg2rp3"  type="radio"> <p id="erradopg2rp3">10/01, 23/04 e 19/04 </p>
+        </div>
+        <div class="resposta">
+        <p>D - </p><input id="inputpg2rp4" type="radio"> <p id="erradopg2rp4">05/01, 01/01 e 25/12</p>
+        </div>
+        <div class="resposta">
+        <p>E - </p><input id="inputpg2rp5"  type="radio"> <p id="erradopg2rp5">10/01, 13/07 e 05/10 </p>
+        </div>
+        </div>
+        <div class="perguntas">
+        <p class="pergunta">3- Qual foi a data em que nos conhecemos ?
+        </p>
+        <div class="resposta">
+        <p>A - </p><input id="inputpg3rp1" type="radio"> <p id="erradopg3rp1">27/07</p>
+        </div>
+        <div class="resposta">
+        <p>B - </p><input id="inputpg3rp2" type="radio"><p id="erradopg3rp2">20/07</p>
+        </div>
+        <div class="resposta">
+        <p>C - </p><input  id="inputpg3rp3"  type="radio"> <p id="erradopg3rp3">15/07</p>
+        </div>
+        <div class="resposta">
+        <p>D - </p><input onclick="correta3()" type="radio"> <p id="correto3">13/07</p>
+        </div>
+        <div class="resposta">
+        <p>E - </p><input id="inputpg3rp5"  type="radio"> <p id="erradopg3rp5">17/07</p>
+        </div>
+        </div>
+        <div class="perguntas">
+            <p class="pergunta">4- Levando em consideração a foto abaixo onde estavamos e o que aconteceu de mais relevante neste dia ?
+            </p>
+            <img class="foto" src="images/foto4.png" alt="">
+            <div class="resposta">
+            <p>A - </p><input onclick="correta4()" type="radio"> <p id="correto4">Smoke. O Bruno deu PT.</p>
+            </div>
+            <div class="resposta">
+            <p>B - </p><input id="inputpg4rp2" type="radio"><p id="erradopg4rp2">Smoke. O Bruno brigou.</p>
+            </div>
+            <div class="resposta">
+            <p>C - </p><input  id="inputpg4rp3"  type="radio"> <p id="erradopg4rp3">Horus. O Bruno quebrou um narguile.</p>
+            </div>
+            <div class="resposta">
+            <p>D - </p><input id="inputpg4rp4" type="radio"> <p id="erradopg4rp4">Vegas. O Bruno deu PT.</p>
+            </div>
+            <div class="resposta">
+            <p>E - </p><input id="inputpg4rp5"  type="radio"> <p id="erradopg4rp5">Santa Fé. O Bruno brigou.</p>
+            </div>
+            </div>
+            <div class="perguntas">
+                <p class="pergunta">5- Levando em consideração o modo em que nos referimos a quantidade de amor, qual é a frase mais utilizada pelos dois ?
+                </p>
+                <div class="resposta">
+                <p>A - </p><input  id="inputpg5rp1" type="radio"> <p id="erradopg5rp1">Te amo mil milhôes.</p>
+                </div>
+                <div class="resposta">
+                <p>B - </p><input id="inputpg5rp2" type="radio"><p id="erradopg5rp2">Te amo infinito.</p>
+                </div>
+                <div class="resposta">
+                <p>C - </p><input  id="inputpg5rp3"  type="radio"> <p id="erradopg5rp3">Te amo do tamanho do universo.</p>
+                </div>
+                <div class="resposta">
+                <p>D - </p><input id="inputpg5rp4" type="radio"> <p id="erradopg5rp4">Te amo mais que 51!(fatorial).</p>
+                </div>
+                <div class="resposta">
+                <p>E - </p><input onclick="correta5()"  type="radio"> <p id="correto5" >Te amo infinito grãos de areia do tamanho da galáxia.</p>
+                </div>
+                </div>
+                <div class="perguntas">
+                    <p class="pergunta">6-de acordo com a foto abaixo qual frase mais marcante que foi dita neste dia ?
+                    </p>
+                    <img class="foto" src="images/foto-quiz.jpeg" alt="">
+                    <div class="resposta">
+                    <p>A - </p><input id="inputpg6rp1" type="radio"> <p id="erradopg6rp1">Quero ser famoso.</p>
+                    </div>
+                    <div class="resposta">
+                    <p>B - </p><input onclick="correta6()" type="radio"><p id="correto6">Nâo pensamos em namorar.</p>
+                    </div>
+                    <div class="resposta">
+                    <p>C - </p><input  id="inputpg6rp3"  type="radio"> <p id="erradopg6rp3">Não queremos trabalhar.</p>
+                    </div>
+                    <div class="resposta">
+                    <p>D - </p><input id="inputpg6rp4" type="radio"> <p id="erradopg6rp4">Quero ser rico.</p>
+                    </div>
+                    <div class="resposta">
+                    <p>E - </p><input id="inputpg6rp5"  type="radio"> <p id="erradopg6rp5">Não quero fazer faculdade.</p>
+                    </div>
+                    </div>     
+                    
+                    <div class="rodapé">Se um dia tiver que escolher entre o mundo e o amor lembre-se : se escolher o mundo ficará sem o amor, mas se escolher o amor com ele você conquistará o mundo.</div>
+
+    </div>
+
+
+
+
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
